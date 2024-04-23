@@ -25,7 +25,8 @@ import urbina.isaac.todos.model.TodoTask
 @Composable
 fun TodoCard(task: TodoTask) {
     Card(
-        shape = RoundedCornerShape(8.dp), border = BorderStroke(1.dp, Color.Gray)
+        shape = RoundedCornerShape(8.dp),
+        border = BorderStroke(1.dp, Color.Gray)
     ) {
         Row(
             modifier = Modifier.fillMaxWidth(),
