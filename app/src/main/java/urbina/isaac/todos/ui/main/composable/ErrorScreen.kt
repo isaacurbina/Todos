@@ -6,15 +6,14 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
-import urbina.isaac.todos.data.ApiResult
+import urbina.isaac.todos.data.MainScreenState
 
 @Composable
-fun ErrorScreen(result: ApiResult.Error) {
+fun ErrorScreen(result: MainScreenState.Error) {
     Box(
         modifier = Modifier.fillMaxSize()
     ) {
@@ -23,8 +22,7 @@ fun ErrorScreen(result: ApiResult.Error) {
             text = result.exception,
             style = TextStyle(
                 fontWeight = FontWeight.SemiBold,
-                fontSize = 16.sp,
-                color = Color.DarkGray
+                fontSize = 16.sp
             )
         )
     }
@@ -34,6 +32,6 @@ fun ErrorScreen(result: ApiResult.Error) {
 @Composable
 private fun ErrorScreenPreview() {
     ErrorScreen(
-        result = ApiResult.Error("Error on API call goes here")
+        result = MainScreenState.Error("Error on API call goes here")
     )
 }

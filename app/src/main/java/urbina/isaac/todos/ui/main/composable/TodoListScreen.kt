@@ -8,12 +8,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import urbina.isaac.todos.data.ApiResult
+import urbina.isaac.todos.data.MainScreenState
 import urbina.isaac.todos.model.TodoTask
 
 @Composable
-fun TodoListScreen(apiResult: ApiResult.Success<List<TodoTask>>) {
-    val dataList = apiResult.data.orEmpty()
+fun TodoListScreen(mainScreenState: MainScreenState.Success<List<TodoTask>>) {
+    val dataList = mainScreenState.data.orEmpty()
     LazyColumn(
         modifier = Modifier
             .fillMaxSize(1F),
@@ -46,5 +46,5 @@ private fun TodoListScreenPreview() {
             completed = true
         )
     )
-    TodoListScreen(apiResult = ApiResult.Success(list))
+    TodoListScreen(mainScreenState = MainScreenState.Success(list))
 }

@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+    alias(libs.plugins.hilt)
+    alias(libs.plugins.kapt)
 }
 
 android {
@@ -77,7 +79,8 @@ dependencies {
     implementation(libs.androidx.recyclerview)
 
     // hilt
-//    implementation(libs.hilt.android)
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.android.compiler)
 //    implementation(libs.hilt.android.testing)
 //    implementation(libs.hilt.android.compiler)
 //    implementation(libs.hilt.common)

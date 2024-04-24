@@ -53,8 +53,7 @@ fun TodoCard(task: TodoTask) {
                     text = "#${task.id} | ${task.title}",
                     style = TextStyle(
                         fontWeight = FontWeight.SemiBold,
-                        fontSize = 16.sp,
-                        color = Color.Black
+                        fontSize = 16.sp
                     )
                 )
                 Text(
@@ -62,8 +61,7 @@ fun TodoCard(task: TodoTask) {
                     text = "User${task.userId}",
                     style = TextStyle(
                         fontWeight = FontWeight.Bold,
-                        fontSize = 10.sp,
-                        color = Color.DarkGray
+                        fontSize = 10.sp
                     )
                 )
             }

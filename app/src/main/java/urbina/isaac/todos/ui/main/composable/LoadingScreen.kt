@@ -12,12 +12,10 @@ import androidx.compose.ui.unit.dp
 @Composable
 fun LoadingScreen() {
     Box(
-        modifier = Modifier
-            .wrapContentSize(),
+        modifier = Modifier.wrapContentSize(),
     ) {
         CircularProgressIndicator(
-            modifier = Modifier
-                .size(64.dp),
+            modifier = Modifier.size(64.dp),
             strokeWidth = 8.dp
         )
     }
