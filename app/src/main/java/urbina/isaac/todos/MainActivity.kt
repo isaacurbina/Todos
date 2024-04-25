@@ -7,8 +7,14 @@ import androidx.activity.viewModels
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Modifier
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.consumeAsFlow
+import kotlinx.coroutines.launch
 import urbina.isaac.todos.ui.main.composable.MainScreen
 import urbina.isaac.todos.ui.main.viewmodel.MainViewModel
 import urbina.isaac.todos.ui.theme.TodosTheme
@@ -27,7 +33,20 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    MainScreen(viewModel = viewModel)
+                    LaunchedEffect(key1 = viewModel) {
+                        lifecycleScope.launch {
+                            repeatOnLifecycle(Lifecycle.State.STARTED) {
+                                viewModel.mainScreenAction.consumeAsFlow().collect {
+                                    viewModel.handleAction(it)
+                                }
+                            }
+                        }
+                    }
+                    MainScreen(viewModel = viewModel) {
+                        lifecycleScope.launch {
+                            viewModel.mainScreenAction.send(it)
+                        }
+                    }
                 }
             }
         }

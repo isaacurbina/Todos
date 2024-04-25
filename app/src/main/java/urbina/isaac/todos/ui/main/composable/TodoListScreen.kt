@@ -13,7 +13,7 @@ import urbina.isaac.todos.model.TodoTask
 
 @Composable
 fun TodoListScreen(mainScreenState: MainScreenState.Success<List<TodoTask>>) {
-    val dataList = mainScreenState.data.orEmpty()
+    val dataList = mainScreenState.data
     LazyColumn(
         modifier = Modifier
             .fillMaxSize(1F),

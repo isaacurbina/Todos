@@ -81,12 +81,6 @@ dependencies {
     // hilt
     implementation(libs.hilt.android)
     kapt(libs.hilt.android.compiler)
-//    implementation(libs.hilt.android.testing)
-//    implementation(libs.hilt.android.compiler)
-//    implementation(libs.hilt.common)
-//    implementation(libs.hilt.work)
-//    implementation(libs.hilt.work.runtime.ktx)
-    //kapt(libs.hilt.compiler)
 
     // unit tests
     testImplementation(libs.junit)
