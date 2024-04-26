@@ -4,6 +4,7 @@ gradle/8.4/
 gradle/wrapper/
 .gradle/wrapper/
 gradle/cache.properties
+.gradle/cache.properties
 /local.properties
 .idea/
 /.idea/caches
