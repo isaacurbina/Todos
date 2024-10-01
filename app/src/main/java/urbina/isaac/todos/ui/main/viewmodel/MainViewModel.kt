@@ -9,6 +9,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import urbina.isaac.todos.data.MainScreenAction
 import urbina.isaac.todos.data.MainScreenState
 import urbina.isaac.todos.data.repository.TodoRepository
@@ -35,7 +36,7 @@ class MainViewModel @Inject constructor(
 
     private suspend fun fetchTodoTasks() {
         _mainScreenState.emit(MainScreenState.Loading)
-        val response = todoRepository.todoTasks()
+        val response = withContext(ioDispatcher) { todoRepository.todoTasks() }
         _mainScreenState.emit(response)
     }
 }

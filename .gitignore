@@ -1,6 +1,6 @@
 *.iml
-gradle/8.4/
-.gradle/8.4/
+gradle/*
+.gradle/*
 gradle/wrapper/
 .gradle/wrapper/
 gradle/cache.properties
@@ -23,3 +23,5 @@ captures/
 gradlew
 gradlew.bat
 local.properties
+.kotlin/*
+/.kotlin/*
