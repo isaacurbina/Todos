@@ -23,3 +23,5 @@ captures/
 gradlew
 gradlew.bat
 local.properties
+.kotlin/*
+/.kotlin/*
